@@ -1,18 +1,19 @@
+# 12345
 def list_sqr():
     sqr = [x**2 for x in range(1, 10)]
     return sqr
-print('Список квадратов чисел от 1 до 10:',list_sqr())
+# print('Список квадратов чисел от 1 до 10:',list_sqr())
 
 def list_chet():
     chet = [x for x in range(1, 20) if x % 2 == 0]
     return chet
-print('Список чётных чисел от 1 до 20:',list_chet())
+# print('Список чётных чисел от 1 до 20:',list_chet())
 
 def create_list_word():
     words = ["python", "Java", "c++", "Rust", "go"]
     up_words = [w.upper() for w in words if len(w) > 3]
     return up_words
-print('Список слов в верхнем регистре и длиннее 3 символов:',create_list_word())
+# print('Список слов в верхнем регистре и длиннее 3 символов:',create_list_word())
 
 def class_countdown():
     class Countdown:
@@ -32,7 +33,7 @@ def class_countdown():
     for number in Countdown(5):
         list_number.append(number)
     return list_number
-print('Список числел от 5 до 1:',class_countdown())
+# print('Список числел от 5 до 1:',class_countdown())
 
 def fibonaccі(n):
     a, b = 0, 1
@@ -42,7 +43,7 @@ def fibonaccі(n):
 list_number = []
 for number in fibonaccі(5):
     list_number.append(number)
-print('Список чисел последовательности Фибоначи длиной 5:', list_number)
+# print('Список чисел последовательности Фибоначи длиной 5:', list_number)
 
 def financial_calculator():
     from decimal import Decimal, getcontext, ROUND_HALF_UP
@@ -64,7 +65,7 @@ def financial_calculator():
     print(f"Итоговая сумма вклада: {final_amount} руб.")
     print(f"Общая прибыль: {profit.quantize(Decimal('0.01'))} руб.")
 
-financial_calculator()
+# financial_calculator()
 
 def fract():
     from fractions import Fraction
@@ -83,7 +84,7 @@ def fract():
     print(f"3/4 * 5/6 = {multiplication}")
     print(f"3/4 / 5/6 = {division}")
     pass
-fract()
+# fract()
 
 def data_time():
     from datetime import datetime, date
@@ -94,7 +95,7 @@ def data_time():
     print("Текущая дата:", data.strftime("%Y-%m-%d"))
     time = data_time.time()
     print("Текущее время:", time.strftime("%H:%M:%S"))
-data_time()
+# data_time()
 
 def birthday():
     from datetime import date, timedelta
@@ -114,7 +115,7 @@ def birthday():
 
     print(f"Дней с момента рождения: {days_since_birthday}")
     print(f"Дней до следующего дня рождения: {days_until_next_birthday}")
-birthday()
+# birthday()
 
 from datetime import datetime
 
@@ -132,4 +133,4 @@ def format_datetime(dt: datetime) -> str:
 
 
 now = datetime.now()
-print(format_datetime(now))
+# print(format_datetime(now))
