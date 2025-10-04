@@ -33,3 +33,13 @@ def class_countdown():
         list_number.append(number)
     return list_number
 print('Список числел от 5 до 1:',class_countdown())
+
+def fibonaccі(n):
+    a, b = 0, 1
+    for _ in range(n):
+        yield a
+        a, b = b, a + b
+list_number = []
+for number in fibonaccі(5):
+    list_number.append(number)
+print('Список чисел последовательности Фибоначи длиной 5:', list_number)
