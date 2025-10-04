@@ -44,12 +44,12 @@ for number in fibonaccі(5):
     list_number.append(number)
 print('Список чисел последовательности Фибоначи длиной 5:', list_number)
 
-from decimal import Decimal, getcontext, ROUND_HALF_UP
-
-getcontext().prec = 28
-getcontext().rounding = ROUND_HALF_UP
-
 def financial_calculator():
+    from decimal import Decimal, getcontext, ROUND_HALF_UP
+
+    getcontext().prec = 28
+    getcontext().rounding = ROUND_HALF_UP
+
     initial_amount = Decimal(input("Введите начальную сумму вклада: ").strip())
     annual_rate = Decimal(input("Введите годовую процентную ставку: ").strip())
     years = Decimal(input("Введите срок вклада в годах: ").strip())
@@ -84,3 +84,14 @@ def fract():
     print(f"3/4 / 5/6 = {division}")
     pass
 fract()
+
+def data_time():
+    from datetime import datetime, date
+
+    data_time = datetime.now()
+    print("Текущая дата и время:", data_time.strftime("%Y-%m-%d %H:%M:%S"))
+    data = date.today()
+    print("Текущая дата:", data.strftime("%Y-%m-%d"))
+    time = data_time.time()
+    print("Текущее время:", time.strftime("%H:%M:%S"))
+data_time()
