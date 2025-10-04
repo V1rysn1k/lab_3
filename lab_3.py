@@ -43,3 +43,25 @@ list_number = []
 for number in fibonaccі(5):
     list_number.append(number)
 print('Список чисел последовательности Фибоначи длиной 5:', list_number)
+
+from decimal import Decimal, getcontext, ROUND_HALF_UP
+
+getcontext().prec = 28
+getcontext().rounding = ROUND_HALF_UP
+
+def financial_calculator():
+    initial_amount = Decimal(input("Введите начальную сумму вклада: ").strip())
+    annual_rate = Decimal(input("Введите годовую процентную ставку: ").strip())
+    years = Decimal(input("Введите срок вклада в годах: ").strip())
+
+    monthly_rate = annual_rate / Decimal('12') / Decimal('100')
+    months = years * Decimal('12')
+
+    final_amount = initial_amount * ( (Decimal('1') + monthly_rate) ** months )
+    final_amount = final_amount.quantize(Decimal('0.01'))
+    profit = final_amount - initial_amount
+
+    print(f"Итоговая сумма вклада: {final_amount} руб.")
+    print(f"Общая прибыль: {profit.quantize(Decimal('0.01'))} руб.")
+
+financial_calculator()
