@@ -13,3 +13,23 @@ def create_list_word():
     up_words = [w.upper() for w in words if len(w) > 3]
     return up_words
 print('Список слов в верхнем регистре и длиннее 3 символов:',create_list_word())
+
+def class_countdown():
+    class Countdown:
+        def __init__(self, n):
+            self.n = n
+        
+        def __iter__(self):
+            return self
+        
+        def __next__(self):
+            if self.n <= 0:
+                raise StopIteration
+            c = self.n
+            self.n -= 1
+            return c
+    list_number = []
+    for number in Countdown(5):
+        list_number.append(number)
+    return list_number
+print('Список числел от 5 до 1:',class_countdown())
