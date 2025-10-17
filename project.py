@@ -36,3 +36,39 @@ add(54, 12)
 divide(21, 6)
 divide(36, 0)
 greet("Dazzle")
+
+def require_role(allowed_roles):
+    def decorator(func):
+        def wrapper(user, *args, **kwargs):
+            if user.get("role") in allowed_roles:
+                return func(user, *args, **kwargs)
+            else:
+                print(f"Доступ запрещён пользователю {user['name']}")
+        return wrapper
+    return decorator
+
+@require_role(["admin"])
+def delete_database(user):
+    print(f"База данных удалена пользователем {user['name']}")
+
+
+@require_role(["admin", "manager"])
+def view_reports(user):
+    print(f"Пользователь {user['name']} просматривает отчёты")
+
+
+@require_role(["user", "manager", "admin"])
+def access_dashboard(user):
+    print(f"Пользователь {user['name']} зашёл на панель управления")
+
+user_admin = {"name": "Pudge", "role": "admin"}
+user_manager = {"name": "Riki", "role": "manager"}
+user_user = {"name": "Oracle", "role": "user"}
+user_guest = {"name": "Lina", "role": "guest"}
+
+delete_database(user_admin)
+delete_database(user_manager)
+view_reports(user_manager)
+view_reports(user_guest)
+access_dashboard(user_user)
+access_dashboard(user_guest)
