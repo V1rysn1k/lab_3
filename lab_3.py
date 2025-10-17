@@ -115,7 +115,7 @@ def birthday():
 
     print(f"Дней с момента рождения: {days_since_birthday}")
     print(f"Дней до следующего дня рождения: {days_until_next_birthday}")
-# birthday()
+birthday()
 
 from datetime import datetime
 
