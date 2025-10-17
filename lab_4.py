@@ -42,3 +42,30 @@ class Bike(Transport):
 
     def __str__(self):
         return f"Bike: {self.brand}, Speed: {self.speed}, Type: {self.type}"
+    
+transport = Transport("Tini&A", 330)
+car1 = Car("BaraUber", 1000, 1)
+car2 = Car("TuskBall", 200, 4)
+bike = Bike("Hook&Q", 500, "mountain")
+
+print(transport)
+print(car1)
+print(car2)
+print(bike)
+
+transport.move()
+car1.move()
+bike.move()
+car1.honk()
+
+print(f"Количество мест в car1: {len(car2)}")
+
+print(f"car1 и car2 имеют одинаковую скорость? {'да' if car1 == car2 else 'нет'}")
+
+print(f"Суммарная скорость car1 и car2: {car1 + car2}")
+
+try:
+    result = car1 + bike
+    print(f"Результат сложения car1 и bike: {result}")
+except TypeError as e:
+    print(f"Ошибка при сложении car1 и bike: {e}")
