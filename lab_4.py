@@ -23,6 +23,15 @@ class Car(Transport):
     def __str__(self):
         return f"Car: {self.brand}, Speed: {self.speed}, Seats: {self.seats}"
     
+    def __len__(self):
+        return self.seats
+
+    def __eq__(self, other):
+        return self.speed == other.speed
+
+    def __add__(self, other):
+        return self.speed + other.speed
+    
 class Bike(Transport):
     def __init__(self, brand, speed, type):
         super().__init__(brand, speed)
