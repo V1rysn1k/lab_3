@@ -69,3 +69,12 @@ try:
     print(f"Результат сложения car1 и bike: {result}")
 except TypeError as e:
     print(f"Ошибка при сложении car1 и bike: {e}")
+
+vehicles = [
+    Transport("Generic", 60),
+    Car("BMW", 180, 4),
+    Bike("Giant", 35, "mountain")
+]
+
+for vehicle in vehicles:
+    vehicle.move()
